@@ -128,5 +128,7 @@ set sw=4
 " erasing previously inserted caracters in insert mode
 :set backspace=indent,eol,start
 
+set t_Co=256
 colorscheme gruvbox
 set background=dark
+
