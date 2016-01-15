@@ -7,11 +7,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vim-scripts/Vim-R-plugin'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'tpope/vim-fugitive'
+Plugin 'morhetz/gruvbox' 
+"Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'vim-scripts/Vim-R-plugin'
+"Plugin 'junegunn/vim-easy-align'
+"Plugin 'vim-pandoc/vim-pandoc'
+"Plugin 'tpope/vim-fugitive'
 
  call vundle#end()            " required
  filetype plugin indent on    " required
@@ -126,3 +127,6 @@ set sw=4
 
 " erasing previously inserted caracters in insert mode
 :set backspace=indent,eol,start
+
+colorscheme gruvbox
+set background=dark
