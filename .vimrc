@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox' 
+Plugin 'altercation/vim-colors-solarized'
 "Plugin 'nathanaelkane/vim-indent-guides'
 "Plugin 'vim-scripts/Vim-R-plugin'
 "Plugin 'junegunn/vim-easy-align'
@@ -129,6 +130,8 @@ set sw=4
 :set backspace=indent,eol,start
 
 set t_Co=256
-colorscheme gruvbox
-set background=dark
+" colorscheme gruvbox
+let g:solarized_termcolors=256
+colorscheme solarized
+set background=light
 
