@@ -131,7 +131,8 @@ set sw=4
 
 set t_Co=256
 " colorscheme gruvbox
-let g:solarized_termcolors=256
-colorscheme solarized
-set background=light
+" let g:solarized_termcolors=256
+" colorscheme solarized
+colorscheme elflord
+set background=dark
 
