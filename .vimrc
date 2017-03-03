@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox' 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'jalvesaq/Nvim-R.git'
 "Plugin 'nathanaelkane/vim-indent-guides'
 "Plugin 'vim-scripts/Vim-R-plugin'
 "Plugin 'junegunn/vim-easy-align'
@@ -54,7 +55,7 @@ let r_syntax_folding = 1
 
 " Highlight the current line
 set cursorline
-hi CursorLine   cterm=NONE ctermbg=green ctermfg=white 
+"hi CursorLine   cterm=NONE ctermbg=green ctermfg=white 
 
 " set to autoread when a file is changed from outside
 set autoread
@@ -133,6 +134,6 @@ set t_Co=256
 " colorscheme gruvbox
 " let g:solarized_termcolors=256
 " colorscheme solarized
-colorscheme elflord
-set background=dark
+"colorscheme elflord
+"set background=light
 
