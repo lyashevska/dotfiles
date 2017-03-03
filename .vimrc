@@ -2,22 +2,7 @@ set nocompatible
 filetype on
 filetype indent on
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox' 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jalvesaq/Nvim-R.git'
-"Plugin 'nathanaelkane/vim-indent-guides'
-"Plugin 'vim-scripts/Vim-R-plugin'
-"Plugin 'junegunn/vim-easy-align'
-"Plugin 'vim-pandoc/vim-pandoc'
-"Plugin 'tpope/vim-fugitive'
-
- call vundle#end()            " required
- filetype plugin indent on    " required
+filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 filetype plugin on
 "
