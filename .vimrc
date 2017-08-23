@@ -11,19 +11,20 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'Valloric/YouCompleteMe'
 
-" Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just
 " :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 " see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+let g:SimpylFold_docstring_preview=1
 
 "" Number of lines
 set nu
@@ -125,10 +126,6 @@ set spell spelllang=en_gb
 "" Splits and navigation
 set splitbelow
 set splitright 
-nnoremap <C-J> <C-W><C-J> " ctrl-j below
-nnoremap <C-K> <C-W><C-K> " ctrl-k above 
-nnoremap <C-L> <C-W><C-L> " ctrl-l right
-nnoremap <C-H> <C-W><C-H> "ctrl-h left
 
 "" Text Wrapping
 set textwidth=79
@@ -138,4 +135,18 @@ set nowrap
 "" Enable folding with the spacebar
 nnoremap <space> za
 
+"" Python 
+"" Indentation
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
 
+"" Flagging unnecessary whitespace
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+set encoding=utf-8
