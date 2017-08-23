@@ -1,11 +1,16 @@
 set nocompatible
-filetype on
+filetype off
 filetype indent on
-
-filetype plugin indent on    " required
 
 "" To ignore plugin indent changes, instead use:
 filetype plugin on
+
+
+"" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'tmhedberg/SimpylFold'
 
 " Brief help
 " :PluginList       - lists configured plugins
@@ -15,6 +20,10 @@ filetype plugin on
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 
 "" Number of lines
 set nu
@@ -37,6 +46,10 @@ let Rout_more_colors = 1
 
 " To enable the syntax method of folding for R files
 let r_syntax_folding = 1
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
 
 "" Highlight the current line
 set cursorline
@@ -71,6 +84,7 @@ set encoding=utf8
 "" Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+"" Tabs
 set smartindent
 set tabstop=4
 set shiftwidth=4
@@ -79,7 +93,7 @@ set expandtab
 "" Enable use of the mouse for all modes
 set mouse=a
 
-"" configuration for vim-r-plugin:
+"" Configuration for vim-r-plugin:
 syntax on
 filetype plugin on
 filetype indent on
@@ -92,11 +106,10 @@ let mapleader = ";"
 vmap <Space> <Plug>RDSendSelection
 nmap <Space> <Plug>RDSendLine
 
-"" Highlight the last searched pattern
-set hlsearch
-
-"" Show where the next pattern is as you type it:
-set incsearch
+"" Search and Subsitute
+set hlsearch " highlight the last searched pattern
+set incsearch " show where the next pattern is as you type it:
+set ignorecase
 
 "" By default, Vim indents code by 8 spaces. Most people prefer 4
 " spaces:
@@ -108,7 +121,21 @@ set backspace=indent,eol,start
 set t_Co=256
 
 set spell spelllang=en_gb
-set splitright " Split to right by default
+
+"" Splits and navigation
+set splitbelow
+set splitright 
+nnoremap <C-J> <C-W><C-J> " ctrl-j below
+nnoremap <C-K> <C-W><C-K> " ctrl-k above 
+nnoremap <C-L> <C-W><C-L> " ctrl-l right
+nnoremap <C-H> <C-W><C-H> "ctrl-h left
 
 "" Text Wrapping
+set textwidth=79
+set colorcolumn=80
+set nowrap
+
+"" Enable folding with the spacebar
+nnoremap <space> za
+
 
