@@ -1,4 +1,6 @@
-Whenever you want your dotfiles in any other box, you can simply do the following:
+source: http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
+
+Whenever you want your dotfiles in any other place, you can simply do the following:
 
 cd ~
 

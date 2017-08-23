@@ -1,3 +1,6 @@
+"changed
+"
+
 set nocompatible
 filetype on
 filetype indent on
