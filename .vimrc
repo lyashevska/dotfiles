@@ -134,24 +134,22 @@ set splitright
 "" Text Wrapping
 set textwidth=79
 set colorcolumn=80
-set nowrap
+set wrap
 
 "" Enable folding with the spacebar
 nnoremap <space> za
 
-"" Python 
-"" Indentation
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-
-"" Flagging unnecessary whitespace
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"" Python, PEP-008
+" au BufRead,BufNewFile *.py,*.pyw set expandtab
+" au BufRead,BufNewFile *.py,*.pyw set textwidth=139
+" au BufRead,BufNewFile *.py,*.pyw set tabstop=4
+" au BufRead,BufNewFile *.py,*.pyw set softtabstop=4
+" au BufRead,BufNewFile *.py,*.pyw set shiftwidth=4
+" au BufRead,BufNewFile *.py,*.pyw set autoindent
+" au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+" au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
+" au         BufNewFile *.py,*.pyw set fileformat=unix
+" au BufRead,BufNewFile *.py,*.pyw let b:comment_leader = '#'
 
 set encoding=utf-8
 let python_highlight_all=1
