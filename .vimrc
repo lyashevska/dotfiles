@@ -157,5 +157,8 @@ set encoding=utf-8
 let python_highlight_all=1
 set clipboard=unnamed
 
+" NVIM-R
 let mapleader = ";"
 let maplocalleader = ","
+
+let g:slime_target = "tmux"
