@@ -160,5 +160,9 @@ set clipboard=unnamed
 " NVIM-R
 let mapleader = ";"
 let maplocalleader = ","
+" run R in tmux split
+let R_in_buffer = 0
+let R_applescript = 0
+let R_tmux_split = 1
 
 let g:slime_target = "tmux"
