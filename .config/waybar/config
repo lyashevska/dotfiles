@@ -1,0 +1,63 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "custom/wifi",
+    "custom/bandwidth",
+    "pulseaudio",
+    "battery",
+    "cpu",
+    "memory",
+    "custom/brightness",
+    "tray"
+  ],
+
+  "clock": {
+    "format": "{:%a %b %d  %H:%M}",
+    "tooltip-format": "{:%Y-%m-%d %H:%M:%S}"
+  },
+
+  "custom/bandwidth": {
+  "exec": "~/.config/waybar/scripts/network_bandwidth.sh",
+  "interval": 2,
+  "return-type": "text"
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "\uf026 Muted",
+    "format-icons": {
+      "default": ["\uf026", "\uf027", "\uf028"]
+    }
+  },
+
+  "cpu": {
+    "format": "\uf2db {usage}%"
+  },
+
+  "memory": {
+    "format": "\uf538 {used:0.1f}G"
+  },
+
+  "custom/wifi": {
+    "exec": "~/.config/waybar/scripts/wifi_status.sh",
+    "interval": 5,
+    "tooltip": false
+},
+
+  "custom/brightness": {
+    "exec": "~/.config/waybar/scripts/brightness.sh",
+    "interval": 2,
+    "tooltip": false
+}
+  
+}
+
