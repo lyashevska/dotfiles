@@ -112,3 +112,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# run chromium with native wayland support
+alias chromium='chromium --ozone-platform=wayland'
+
