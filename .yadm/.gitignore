@@ -1,0 +1,57 @@
+# Ignore common transient/user data folders
+Downloads/
+Documents/
+Pictures/
+Videos/
+Music/
+Desktop/
+
+# Common cache and build folders
+.cache/
+.local/share/Trash/
+.local/share/recently-used.xbel
+
+# Application caches
+.mozilla/
+.chromium/
+.vivaldi/
+.thunderbird/
+.gitkraken/
+.VirtualBox/
+
+# Editor/IDE temp files
+*~
+*.swp
+*.swo
+*.bak
+
+# VSCode
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Avoid tracking large logs
+*.log
+
+# GNUPG socket
+.gnupg/private-keys-v1.d/
+
+# Rust target
+target/
+
+# systemd journal in user space (if any)
+.local/state/systemd/
+
+# Flatpak downloads (if using flatpak)
+.local/share/flatpak/exports/
+
+# Virtualenvs
+.venv/
+env/
+venv/
+
