@@ -6,7 +6,6 @@
   "modules-center": ["clock"],
   "modules-right": [
     "custom/wifi",
-    "custom/bandwidth",
     "pulseaudio",
     "battery",
     "cpu",
@@ -20,32 +19,32 @@
     "tooltip-format": "{:%Y-%m-%d %H:%M:%S}"
   },
 
-  "custom/bandwidth": {
-  "exec": "~/.config/waybar/scripts/network_bandwidth.sh",
-  "interval": 2,
-  "return-type": "text"
-  },
-
   "battery": {
-    "format": "{icon} {capacity}%",
-    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
-  },
+    "format": "<span color='#a3be8c'></span> {capacity}%",
+    "format-charging": "<span color='#ebcb8b'></span> {capacity}%",
+    "format-plugged": "<span color='#ebcb8b'></span> {capacity}%",
+    "format-icons": ["", "", "", ""],
+    "interval": 30
+},
 
-  "pulseaudio": {
+"pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "\uf026 Muted",
+    "format-muted": "🔇 Muted",
     "format-icons": {
-      "default": ["\uf026", "\uf027", "\uf028"]
-    }
-  },
+      "default": ["🔈", "🔉", "🔊"]
+    },
+    "scroll-step": 5
+},
 
   "cpu": {
-    "format": "\uf2db {usage}%"
-  },
+    "format": "<span color='#bf616a'></span> {usage}%",
+    "interval": 5
+},
 
   "memory": {
-    "format": "\uf538 {used:0.1f}G"
-  },
+    "format": " {used:0.1f}G/{total:0.0f}G",
+    "interval": 10
+},
 
   "custom/wifi": {
     "exec": "~/.config/waybar/scripts/wifi_status.sh",
