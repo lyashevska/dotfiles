@@ -208,8 +208,8 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # Special keys to adjust brightness via brightnessctl
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 10%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl -d intel_backlight set 10%+
 
 # Status Bar:
 #
@@ -243,6 +243,9 @@ bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%F-%T)
 bindsym Ctrl+Print exec sh -c 'grim - | wl-copy'
 # Selection to clipboard
 bindsym Ctrl+Shift+Print exec sh -c 'grim -g "$(slurp)" - | wl-copy'
+
+# add bluetooth applet
+exec_always --no-startup-id blueman-applet
 
 
 
