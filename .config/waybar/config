@@ -11,7 +11,8 @@
     "cpu",
     "memory",
     "custom/brightness",
-    "tray"
+    "tray",
+    "custom/keyboard"
   ],
 
   "clock": {
@@ -33,7 +34,8 @@
     "format-icons": {
       "default": ["🔈", "🔉", "🔊"]
     },
-    "scroll-step": 5
+    "scroll-step": 5,
+    "on-click": "pavucontrol"
 },
 
   "cpu": {
@@ -56,7 +58,14 @@
     "exec": "~/.config/waybar/scripts/brightness.sh",
     "interval": 2,
     "tooltip": false
+},
+ "custom/keyboard": {
+   "exec": "~/.config/waybar/scripts/layout.sh",
+   "interval": 2,
+   "on-click": "swaymsg input '*' xkb_switch_layout next",
+   "tooltip": false
+}
+
 }
   
-}
 

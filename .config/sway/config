@@ -38,8 +38,8 @@ bindsym $mod+Shift+Escape exec swaylock -f -c 2e3440
 
 exec swayidle -w \
     timeout 300 'swaylock -f -c 2e3440' \
-    timeout 600 'swaymsg "output * power off"' \
-    resume 'swaymsg "output * power on"' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -c 000000'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -234,7 +234,7 @@ include /etc/sway/config.d/*
 
 #olga's custom
 bindsym $mod+d exec wofi --show drun
-exec waybar
+exec_always --no-startup-id sh -c 'pkill waybar; sleep 0.5; waybar'
 exec mako
 
 # Full-screen to Pictures
@@ -247,7 +247,13 @@ bindsym Ctrl+Print exec sh -c 'grim - | wl-copy'
 bindsym Ctrl+Shift+Print exec sh -c 'grim -g "$(slurp)" - | wl-copy'
 
 # add bluetooth applet
-exec_always --no-startup-id blueman-applet
+exec_always --no-startup-id sh -c 'sleep 2 && blueman-applet'
 
+# fix screen sharing 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland
 
+input * {
+    xkb_layout us,ru
+    xkb_options grp:alt_shift_toggle
+}
 
