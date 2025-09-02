@@ -80,6 +80,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git z sudo history-substring-search zsh-syntax-highlighting zsh-autosuggestions)
 
+ZSH_THEME=robbyrussell
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -114,4 +116,11 @@ source $ZSH/oh-my-zsh.sh
 setopt CORRECT
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#
+# pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+

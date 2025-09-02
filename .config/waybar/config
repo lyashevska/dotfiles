@@ -51,7 +51,8 @@
   "custom/wifi": {
     "exec": "~/.config/waybar/scripts/wifi_status.sh",
     "interval": 5,
-    "tooltip": false
+    "tooltip": false,
+    "on-click": "nm-connection-editor"
 },
 
   "custom/brightness": {
@@ -63,7 +64,8 @@
    "exec": "~/.config/waybar/scripts/layout.sh",
    "interval": 2,
    "on-click": "swaymsg input '*' xkb_switch_layout next",
-   "tooltip": false
+   "tooltip": false,
+   "on-click": "nm-connection-editor"
 }
 
 }
