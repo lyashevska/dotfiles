@@ -5,6 +5,7 @@
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["clock"],
   "modules-right": [
+    "custom/vpn",
     "custom/wifi",
     "pulseaudio",
     "battery",
@@ -47,6 +48,12 @@
     "format": " {used:0.1f}G/{total:0.0f}G",
     "interval": 10
 },
+
+  "custom/vpn": {
+    "exec": "~/.local/bin/vpn-status",
+    "interval": 5,
+    "return-type": "json"
+  },
 
   "custom/wifi": {
     "exec": "~/.config/waybar/scripts/wifi_status.sh",

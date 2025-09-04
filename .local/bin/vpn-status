@@ -1,0 +1,20 @@
+# ~/.local/bin/vpn-status
+#!/usr/bin/env bash
+set -euo pipefail
+
+is_up=false
+if ip link show tun0 up >/dev/null 2>&1; then
+  # interface exists and is up
+  if ip route | grep -qE '^default .* dev tun0\b'; then
+    is_up=true
+  fi
+fi
+
+if $is_up; then
+  echo '{"text":" VPN","tooltip":"tun0 up • default via tun0","class":"up"}'
+  exit 0
+else
+  echo '{"text":" VPN","tooltip":"No VPN (tun0 down or not default)","class":"down"}'
+  exit 1
+fi
+

@@ -51,3 +51,8 @@ window#waybar {
 #battery.critical {
   color: #bf616a;
 }
+
+#custom-vpn.up { color: #37c837; }
+
+#custom-vpn.down { color: #ff5f5f; }
+
