@@ -32,6 +32,7 @@ export XDG_CURRENT_DESKTOP=sway
 export QT_QPA_PLATFORM=wayland
 export MOZ_ENABLE_WAYLAND=1
 export GDK_BACKEND=wayland,x11
+export ELECTRON_OZONE_PLATFORM_HINT=auto
 
 # Start dbus if not running
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
